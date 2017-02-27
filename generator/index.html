@@ -26,7 +26,6 @@
 				<button class="generator_button" ng-click="generate()">Generate Love Letter</button>
 				<br><br>
 				<div class="multi_lines_text"> {{letter}} </div>
-				<br><br>
 			</div>
 			<div class="col-md-7"></div>
 		</div>
@@ -38,24 +37,22 @@
 			<div class="col-md-8">
 
               
-				<div class="col-md-2" > <span class="title" ng-click="rename('one')">SALUTATIONS 1 </span>
-					<textarea spellcheck="true" id="one" class="chameleon"></textarea>
-					<br><BR>
+				<div class="col-md-2" > <br><BR><span class="title">SALUTATIONS 1 </span><br><BR>
 					<div ng-repeat="s1 in salutations1">{{s1}} </div>
 				</div>
-				<div class="col-md-2"> <span class="title">SALUTATIONS 2 </span><br><BR>
+				<div class="col-md-2"> <br><BR><span class="title">SALUTATIONS 2 </span><br><BR>
 					<div ng-repeat="s2 in salutations2">{{s2}}</div>
 				</div>
-				<div class="col-md-2"> <span class="title">ADJECTIVES </span><br><BR>
+				<div class="col-md-2"> <br><BR><span class="title">ADJECTIVES </span><br><BR>
 					<div ng-repeat="adj in adjectives">{{adj}}</div>
 				</div>
-				<div class="col-md-2"> <span class="title">ADVERBS </span><br><BR>
+				<div class="col-md-2"> <br><BR><span class="title">ADVERBS </span><br><BR>
 					<div ng-repeat="adv in adverbs">{{adv}}</div>
 				</div>
-				<div class="col-md-2" > <span class="title">NOUNS </span><br><BR>
+				<div class="col-md-2" > <br><BR><span class="title">NOUNS </span><br><BR>
 					<div ng-repeat="n in nouns">{{n}}</div>
 				</div>
-				<div class="col-md-2" > <span class="title">VERBS </span><br><BR>
+				<div class="col-md-2" > <br><BR><span class="title">VERBS </span><br><BR>
 					<div ng-repeat="v in verbs">{{v}}</div>
 				</div>
 			</div>
@@ -63,6 +60,18 @@
 		</div>
 	</div>
 
+
+	<div class="row credits">
+		<div class="col-md-1"></div>
+		<div class="col-md-8">
+			Coded by Miles <br>
+			Based on Christopher Strachey's "Loveletters" - 1952 <br><br>
+			Read More <br>
+			<a target="_blank" href="http://rhizome.org/editorial/2013/apr/9/queer-history-computing-part-three/">http://rhizome.org/editorial/2013/apr/9/queer-history-computing-part-three/</a><br>
+			<a target="_blank" href="http://www.alpha60.de/research/there_must_be_an_angel/DavidLink_MustBeAnAngel_2006.pdf">http://www.alpha60.de/research/there_must_be_an_angel/DavidLink_MustBeAnAngel_2006.pdf</a>
+
+		</div>
+	</div>
 
 	<!-- Modules -->
     <script src="js/app.js"></script>
