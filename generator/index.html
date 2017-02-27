@@ -1,0 +1,75 @@
+<html>
+
+<head>
+	<title> Miles Hilton </title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="style.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body ng-app="GeneratorApp">
+	<div id="content" ng-controller="MainController">
+		
+
+		<div class= "row">
+			<div class="col-md-1"></div>
+			<div class="col-md-4">
+				<button class="generator_button" ng-click="generate()">Generate Love Letter</button>
+				<br><br>
+				<div class="multi_lines_text"> {{letter}} </div>
+				<br><br>
+			</div>
+			<div class="col-md-7"></div>
+		</div>
+
+		
+
+		<div class="row">
+			<div class="col-md-1"></div>
+			<div class="col-md-8">
+
+              
+				<div class="col-md-2" > <span class="title" ng-click="rename('one')">SALUTATIONS 1 </span>
+					<textarea spellcheck="true" id="one" class="chameleon"></textarea>
+					<br><BR>
+					<div ng-repeat="s1 in salutations1">{{s1}} </div>
+				</div>
+				<div class="col-md-2"> <span class="title">SALUTATIONS 2 </span><br><BR>
+					<div ng-repeat="s2 in salutations2">{{s2}}</div>
+				</div>
+				<div class="col-md-2"> <span class="title">ADJECTIVES </span><br><BR>
+					<div ng-repeat="adj in adjectives">{{adj}}</div>
+				</div>
+				<div class="col-md-2"> <span class="title">ADVERBS </span><br><BR>
+					<div ng-repeat="adv in adverbs">{{adv}}</div>
+				</div>
+				<div class="col-md-2" > <span class="title">NOUNS </span><br><BR>
+					<div ng-repeat="n in nouns">{{n}}</div>
+				</div>
+				<div class="col-md-2" > <span class="title">VERBS </span><br><BR>
+					<div ng-repeat="v in verbs">{{v}}</div>
+				</div>
+			</div>
+			<div class="col-md-3"></div>
+		</div>
+	</div>
+
+
+	<!-- Modules -->
+    <script src="js/app.js"></script>
+
+    <!-- Controllers -->
+    <script src="js/controllers/MainController.js"></script>
+    
+</body>
+
+</html>

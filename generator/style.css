@@ -1,0 +1,38 @@
+body{
+	margin:20px;
+}
+
+.multi_lines_text { 
+	white-space: pre-line; 
+}
+
+.generator_button {
+	color:red;
+	background-color:white;
+	height:90px;
+	width:90px;
+	padding:10px 10px;
+	text-align:center;
+	text-decoration: none;
+	font-size:16px;
+	border: 3px solid red;
+	box-shadow: none;
+}
+
+.generator_button:hover{
+
+} 
+
+.title{
+	color:red;
+}
+
+.chameleon{
+	display:none;
+	width:120px;
+	height:25px;
+	resize:none;
+	overflow-x:hidden;
+	overflow-y:hidden;
+	margin-top:-25px;
+}
