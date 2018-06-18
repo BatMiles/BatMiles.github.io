@@ -42,3 +42,14 @@ $(function() {
 	}
 	
 });
+
+function codeAddress() {
+	// $("h1").animate({ 
+ //        'opacity': '1'
+ //    },2000, function() {
+ //    	$(".hidden").animate({ 
+ //        'opacity': '1'
+ //    },2000);
+ //    });
+}
+window.onload = codeAddress;
