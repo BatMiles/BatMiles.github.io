@@ -6,9 +6,14 @@ $(function() {
 
 	$('a[href*="#"]').click(function(e) {
 		e.preventDefault();
+
 		var $target = $($(this).attr('href'));
+		$('section').hide();
+		$target.show();
+		// alert($target);
 		var scrollTop = $target.offset().top;
 		$('html, body').animate({'scrollTop': scrollTop}, 1000);
+
 	});
 
 	/*************
@@ -42,14 +47,3 @@ $(function() {
 	}
 	
 });
-
-function codeAddress() {
-	// $("h1").animate({ 
- //        'opacity': '1'
- //    },2000, function() {
- //    	$(".hidden").animate({ 
- //        'opacity': '1'
- //    },2000);
- //    });
-}
-window.onload = codeAddress;
