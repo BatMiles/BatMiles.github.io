@@ -97,12 +97,16 @@ p>a {
 
 .photo-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   flex-wrap: wrap;
 }
 .photo {
   max-height: 20rem;
   margin: 1rem;
+}
+
+.text-card {
+  max-width: 13rem;
 }
 
 .particles-gif img {

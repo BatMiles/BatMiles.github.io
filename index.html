@@ -21,7 +21,7 @@
 					</div>
 					<div class="row">
 						<a></a>
-						<a class="nav-link">Embroidery</a>
+						<a class="nav-link" href="#embroidery">Embroidery</a>
 						<a></a>
 						<!-- <a class="nav-link">Quilting</a> -->
 					</div>
@@ -44,13 +44,13 @@
 					</div>
 					<div class="row">
 						<a></a>
-						<a class="nav-link">The Red Zine</a>
+						<a class="nav-link" href="#redletters">The Red Zine</a>
 						<a></a>
 						<!-- <a class="nav-link">Guide for the Cat Doula</a> -->
 					</div>
 				</div>
 				<div class="particles-gif">
-					<img src="images/particles.jpg" class="project-img" />
+					<img src="images/12345.gif" class="project-img" />
 				</div>
 				
 				<!-- <ul>
@@ -118,6 +118,96 @@
 				<img src="images/lightwell4.png" class="photo"/>
 				<img src="images/lightwellFeatures.gif" class="photo" />
 			</div>
+		</section>
+
+		<section id="embroidery">
+			<div class="photo-container">
+				<div class="text-card">
+					<p>ACAB Tapestry - an ongoing exploration of texture and color on simple scaffolding</p>
+					<p>cotton and synthetic thread on denim, glass and plastic beads</p>
+					<p>design & embroidery - Miles</p>
+				</div>
+				<img src="images/acab-full.jpg" class="photo"/>
+				<img src="images/A.jpg" class="photo"/>
+				<div class="text-card">
+					<p>Two Hands - a study in beading and light</p>
+					<p>cotton thread on denim, glass and plastic beads</p>
+					<p>design & embroidery - Miles</p>
+				</div>
+				<img src="images/blunts-full.jpg" class="photo"/>
+				<img src="images/hand1.jpg" class="photo"/>
+				<img src="images/hands.jpg" class="photo"/>
+				<img src="images/hand-detail.jpg" class="photo"/>
+				<div class="text-card">
+					<p>Indigenous - images of flowers and their arabic names over a map of historic Palestine, their indigenous home</p>
+					<p>cotton thread on denim</p>
+					<p>design & embroidery - Miles</p>
+				</div>
+				<img src="images/palestine-full.jpg" class="photo"/>
+				<img src="images/palestine.jpg" class="photo"/>
+				<div class="text-card">
+					<p> Other works </p>
+					<p> various materials</p>
+				</div>
+				<img src="images/flowers.jpg" class="photo"/>
+				<img src="images/flowers-detail.jpg" class="photo"/>
+			</div>
+		</section>
+
+		<section id="redletters">
+			<p>The Red Zine is a script-generated zine of text from <a href="https://www.biblegateway.com/">Bible Gateway</a> a prominent biblical text and commentary website. The zine provides a shortened version of the Bible found on that site, presenting only Jesus's own words - the 'red letters'. </p>
+			<p>For the moment, the reader will have to construct this zine for themselves. Simply save the following code to a local python file, replace the FILEPATH variable with the filepath of the file you wish to save the zine to, and execute the command 'python your_script_name_here.py' in the terminal. In a few minutes, a freshly-baked zine will output to the file you specified.</p>
+			<code><pre>
+from bs4 import BeautifulSoup
+import requests
+import re
+
+url = 'https://www.biblegateway.com/passage/?search='
+version = '&version=NIV'
+
+books = [ ("Matthew", 1), ("Mark", 16), ("Luke", 24), ("John", 21), ("Acts", 28), ("Romans", 16), ("1 Corinthians", 16), ("2 Corinthians", 13), 
+("Galatians",6) ,("Ephesians", 6) ,("Philippians", 4) ,("Colossians", 4) ,
+("1 Thessalonians", 5), ("2 Thessalonians", 3) ,("1 Timothy",6) ,("2 Timothy", 4),
+("Titus", 3) ,("Philemon", 1) ,("Hebrews", 13), ("James", 5) ,
+("1 Peter", 5) ,("2 Peter", 3) ,("1 John", 5) ,("2 John", 1) ,("3 John", 1) ,
+("Jude", 1) ,("Revelation", 22)  ]
+
+redletters = []
+
+for (name, chapters) in books:
+	print(name)
+
+	if (books.index((name, chapters)) < 4): 
+		redletters.append("\n\nThe Gospel According to " + name + '\n\n')
+	else:
+		redletters.append("\n\nThe Book of " + name + '\n\n')
+
+	for chap in range(1, chapters+1):
+		req = requests.get(url+name+'+'+str(chap)+version)
+		site = req.content
+		soup = BeautifulSoup(site, "lxml")
+
+		letters = soup.find_all("span", class_="woj")
+
+		if (len(letters) > 0):
+			redletters.append('Chapter ' + str(chap) + '\n')
+
+		for i in letters:
+			j = re.sub('(?<=<).*?(?=>)', '', str(i))
+			j = re.sub('>[0-9]+', '', str(j))
+			j = re.sub('>', '', str(j))
+			j = re.sub('<', '', str(j))
+			j = re.sub('\n', '', str(j))
+			j = re.sub('\[.*\]', '', str(j))
+
+			j += '\n'
+			redletters.append(j)
+
+with open('FILEPATH', 'a') as f:
+   for line in redletters:
+       f.write(line ) 
+
+			</code>
 		</section>
 
 		<!-- <section id="projects">
