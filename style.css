@@ -98,7 +98,6 @@ p>a {
 .photo-container {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
 }
 .photo {
   max-height: 20rem;
@@ -106,7 +105,23 @@ p>a {
 }
 
 .text-card {
-  max-width: 13rem;
+  /*flex-basis: fit-content;*/
+}
+
+.rotateimg180 {
+  -webkit-transform:rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.rotateimg90 {
+  -webkit-transform:rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
 }
 
 .particles-gif img {
